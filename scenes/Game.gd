@@ -2,9 +2,13 @@ extends Node
 
 onready var factory = load("res://scenes/FoodFactory.tscn").instance()
 onready var h_timer = get_node("HideTimer")
+onready var v_timer = get_node("VictoryTimer")
 onready var cards_a = get_node("Cards")
 onready var req_lbl = get_node("FoodRequest")
 onready var score_lbl = get_node("Score")
+onready var Animator = get_node("Animator")
+
+var food_sprite = "res://assets/%s.png"
 
 const card_back = preload("res://assets/card_back.png")
 onready var needs = [
@@ -59,15 +63,24 @@ func hide_cards():
 	for food in cards_a.get_children():
 		food.set_normal_texture(card_back)
 
+func show_cards():
+	for food in cards_a.get_children():
+		food.set_normal_texture(load(food_sprite % [food.get_name()]))
+
 func check_victory(food_passed):
-	print("Solution is " +  solution)
 	if(needs_sol[solution_ind] == food_passed):
+		var sol_node = get_node("Cards/" + food_passed)
+		Animator.interpolate_property(sol_node, "rect/pos", sol_node.get_pos(), sol_node.get_pos() - Vector2(0, 60), 0.3, Tween.TRANS_LINEAR, Tween.EASE_OUT)
+		Animator.interpolate_property(sol_node, "rect/pos", sol_node.get_pos() - Vector2(0, 60), sol_node.get_pos(), 0.8, Tween.TRANS_BOUNCE, Tween.EASE_OUT, .5)
+		Animator.start()
+
 		req_lbl.set_text("Thanks!")
 		score += 1
 	else:
 		req_lbl.set_text("That's wrong!")
 		score -= 1
-	start_game()
+	show_cards()
+	v_timer.start()
 
 func _button_pressed(food):
 	if (!h_timer.is_active()):
@@ -76,4 +89,7 @@ func _button_pressed(food):
 func _on_Timer_timeout():
 	get_node("Splash").queue_free()
 	create_card_combo()
+	start_game()
+
+func _on_VictoryTimer_timeout():
 	start_game()
