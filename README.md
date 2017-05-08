@@ -1,6 +1,6 @@
 # Food Shop
 
-A quick and dirty game made for the 106th (onehourgamejam)[http://onehourgamejam.com/]; the theme was "Shop".
+A quick and dirty game made for the 106th [onehourgamejam](http://onehourgamejam.com/); the theme was "Shop".
 
 # License
 
