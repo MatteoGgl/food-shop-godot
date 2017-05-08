@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://scripts/FoodFactory.gd" type="Script" id=1]
+[ext_resource path="res://assets/donut.png" type="Texture" id=2]
+[ext_resource path="res://scripts/FoodButton.gd" type="Script" id=3]
+[ext_resource path="res://assets/burger.png" type="Texture" id=4]
+[ext_resource path="res://assets/cheesecake.png" type="Texture" id=5]
+[ext_resource path="res://assets/hotdog.png" type="Texture" id=6]
+[ext_resource path="res://assets/pizza.png" type="Texture" id=7]
+
+[node name="FoodItem" type="Node"]
+
+script/script = ExtResource( 1 )
+
+[node name="donut" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 2 )
+params/resize_mode = 0
+params/scale = Vector2( 8, 8 )
+params/stretch_mode = 0
+script/script = ExtResource( 3 )
+
+[node name="hamburger" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 4 )
+params/resize_mode = 0
+params/scale = Vector2( 8, 8 )
+params/stretch_mode = 0
+script/script = ExtResource( 3 )
+
+[node name="cheesecake" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 5 )
+params/resize_mode = 0
+params/scale = Vector2( 8, 8 )
+params/stretch_mode = 0
+script/script = ExtResource( 3 )
+
+[node name="hotdog" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 6 )
+params/resize_mode = 0
+params/scale = Vector2( 8, 8 )
+params/stretch_mode = 0
+script/script = ExtResource( 3 )
+
+[node name="pizza" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 378.0
+margin/top = 151.0
+margin/right = 538.0
+margin/bottom = 311.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 7 )
+params/resize_mode = 0
+params/scale = Vector2( 8, 8 )
+params/stretch_mode = 0
+script/script = ExtResource( 3 )
+
+
